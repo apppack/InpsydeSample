@@ -7,5 +7,4 @@ php:
   - hhvm
 
 script:  
-  - composer update
   - phpunit
