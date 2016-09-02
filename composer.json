@@ -12,5 +12,5 @@
  }
 ],
     
-	"require" : { "php": ">=5.3.3", phpunit/phpunit": "5.5.*}
+	"require" : { "php": ">=5.3.3", "phpunit/phpunit": "5.5.*}
 }
