@@ -9,7 +9,4 @@
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
-    <php>
-    	<const name="WP_INSTALL" value="../inpsydesample" />
-    </php>
 </phpunit>
