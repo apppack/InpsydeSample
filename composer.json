@@ -8,7 +8,7 @@
 	"authors": [
 {
  "name": "Hemang Vyas",
- "email": "hemangvyas11@gmail.com"
+ "email": "hemangvyas1@gmail.com"
  }
 ],
 	"require" : { "php": ">=5.3.3", "phpunit/phpunit": "5.5.*"}
