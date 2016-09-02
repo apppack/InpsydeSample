@@ -11,6 +11,5 @@
  "email": "hemangvyas11@gmail.com"
  }
 ],
-    
 	"require" : { "php": ">=5.3.3", "phpunit/phpunit": "5.5.*"}
 }
