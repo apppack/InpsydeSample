@@ -4,7 +4,13 @@ require_once dirname( __FILE__ ) . '/../samplenonce.php';
 
 
 class NonceTest extends PHPUnit_Framework_TestCase {
-
+	public function setUp() {
+		\WP_Mock::setUp();
+		require_once dirname( __FILE__ ) . '/../WPnonce.php';
+	}
+	public function tearDown() {
+		\WP_Mock::tearDown();
+	}
 public function testWpCreateNonce() {
 
 $InpCreateNonce = new  InpCreateNonce();
