@@ -1,0 +1,17 @@
+{
+    	
+	"name": "inpsyde/inpsydewpnonce",
+  
+	"description": "This plugin was developed for Inpsyde as an assignment.",  
+	"license": "GPL-3.0+",
+    
+	"authors": [
+{
+ "name": "Hemang Vyas",
+ "email": "hemangvyas11@gmail.com"
+ }
+],
+    
+	"require" : { "php": ">=5.3.3"},
+	"require-dev": {"phpunit/phpunit": "5.5.*"}
+}
