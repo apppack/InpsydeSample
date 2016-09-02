@@ -6,5 +6,6 @@ php:
   - 7.0
   - hhvm
 
-script:  phpunit InpsydeWPNonce-Test.php
-  
+script:  
+  - phpunit InpsydeWPNonce-Test.php
+  - php composer.phar selfupdate
