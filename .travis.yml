@@ -7,6 +7,6 @@ php:
   - hhvm
 
 script: 
-  - composer require inpsyde/inpsydewpnonce
+  - composer require apppack/InpsydeSample
   - phpunit InpsydeWPNonce-Test.php
   
