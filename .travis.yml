@@ -7,5 +7,5 @@ php:
   - hhvm
 
 script:  
-  - phpunit InpsydeWPNonce-Test.php
   - composer update
+  - phpunit InpsydeWPNonce-Test.php
