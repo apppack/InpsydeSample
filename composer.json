@@ -15,7 +15,7 @@
 	"require" : { 
 	"php": ">=5.3.3", 
 	"phpunit/phpunit": "5.2.*"
-	}
+	},
 	
 	"autoload" : {
 		"classmap": ["InpsydeWPNonce.php"]
