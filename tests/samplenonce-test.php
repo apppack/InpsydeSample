@@ -10,7 +10,7 @@ class NonceTest extends PHPUnit_Framework_TestCase {
 	}
 public function testWpCreateNonce() {
 
-$InpNonces = new  InpNonces();
+$InpNonces = new  InpNonces($action);
 $nonce = 'inp-nonce';
 \WP_Mock::wpFunction( 'wp_create_nonce', array(
 				'times'  => 1,
