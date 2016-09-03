@@ -10,7 +10,7 @@ Version: 0.0.1
 
 abstract class AbsInpNonces {
 	
-    private $action;
+    protected $action;
     function __construct( $action ) {
         $this->action = ( $action == NUll ) ? 'inpsyde_action' : $action;
     }
