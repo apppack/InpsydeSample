@@ -26,7 +26,7 @@ abstract class AbsInpNonces {
 
 	public function InpCreateNonce() {
 	
-		return wp_create_nonce($action);
+		return wp_create_nonce($this -> action);
 		
 	}
 }
