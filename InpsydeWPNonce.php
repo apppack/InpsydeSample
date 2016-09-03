@@ -19,7 +19,7 @@ abstract class AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
 	 */
 	 
-	abstract public function InpCreateNonce() {
+	public function InpCreateNonce() {
 	
 		return wp_create_nonce($action = -1);
 		
@@ -33,7 +33,7 @@ abstract class AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_verify_nonce/
 	 */
 	 
-	abstract public function InpVerifyNonce($nonce) {
+	public function InpVerifyNonce($nonce) {
 	
 		return wp_verify_nonce($nonce, $action = -1);
 		
