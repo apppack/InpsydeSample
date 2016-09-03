@@ -17,6 +17,9 @@ $nonce = 'inp-nonce';
 				'return' => $nonce
 			) );
 
-$this->assertEquals( $InpNonces ->  InpCreateNonce() );
+$this->assertEquals( 
+	$nonce,
+	$InpNonces ->  InpCreateNonce() 
+	);
 }
 }
