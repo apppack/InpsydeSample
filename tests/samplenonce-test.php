@@ -1,9 +1,9 @@
 <?php 
+		require_once dirname( __FILE__ ) . '/../samplenonce.php';
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
 		\WP_Mock::setUp();
-		require_once dirname( __FILE__ ) . '/../samplenonce.php';
 	}
 	public function tearDown() {
 		\WP_Mock::tearDown();
