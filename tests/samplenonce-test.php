@@ -1,5 +1,5 @@
 <?php 
-spl_autoload_register(function ($InpNonces) {
+spl_autoload_register(function ($InpsydeSample) {
     include $InpsydeSample . '.php';
 });
 
