@@ -1,5 +1,10 @@
 <?php 
-require_once dirname( __FILE__ ) . '/../InpsydeWPNonce.php';
+
+/*
+ * TESTS FOR InpsydeWPNonce
+ *
+ */
+
 
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
