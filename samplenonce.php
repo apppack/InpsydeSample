@@ -8,23 +8,18 @@ Author: Hemang Vyas
 Version: 0.0.1
 */
 
+abstract class AbsInpNonces {
 
-
-
-abstract class AbsCreateNonce {
-
-	public function create_nonce() {
+	public function InpCreateNonce() {
 	
-		$CreateNonce = $this -> wp_create_nonce($action = -1);
-		
-		return $CreateNonce;
+		return wp_create_nonce($action);
 		
 	}
 }
 
-class InpCreateNonce extends AbsCreateNonce {
+class InpNonces extends AbsInpNonces {
 	
-	public function CreateNonce() {
+	public function InpCreateNonce() {
 	
 	}
 	
