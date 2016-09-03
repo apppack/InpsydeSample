@@ -9,7 +9,7 @@ class NonceTest extends PHPUnit_Framework_TestCase {
 		\WP_Mock::tearDown();
 	}
 public function testWpCreateNonce() {
-$action = 'inpsyde_action'
+$action = 'inpsyde_action';
 $nonce = 'inp_nonce';
 
 $InpNonces = new  InpNonces($action);
