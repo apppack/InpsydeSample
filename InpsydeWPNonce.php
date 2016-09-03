@@ -36,7 +36,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpCreateNonce() {
 	
-	return wp_create_nonce($action);
+	return wp_create_nonce($this -> action);
 	
 	}
 	
@@ -50,7 +50,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpVerifyNonce($nonce) {
 	
-		return wp_verify_nonce($nonce, $action = -1);
+		return wp_verify_nonce($nonce, $this -> action);
 		
 	}
 	
