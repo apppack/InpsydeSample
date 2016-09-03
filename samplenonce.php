@@ -12,13 +12,13 @@ abstract class AbsInpNonces {
 	
     protected $action;
     function __construct( $action ) {
-        $this->action = ( $action == NUll ) ? 'inpsyde_action' : $action;
+        if (empty($action)) {
+    $action = 'inpsyde_action';
+} else {
+    $action = -1;
+}
     }
-    /**
-     * Get the private action var
-     *
-     * @return String $action
-     **/
+    
     public function getAction()
     {
         return $this->action;
