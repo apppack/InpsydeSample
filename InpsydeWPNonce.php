@@ -11,6 +11,8 @@ Version: 0.0.1
 abstract class AbsInpNonces {
 	
     protected $action;
+    protected $nonce;
+    
     public function __construct( $action ) {
         if (empty($action)) {
     $action = 'inpsyde_action';
