@@ -6,10 +6,18 @@
 	"license": "GPL-3.0+",
     
 	"authors": [
-{
- "name": "Hemang Vyas",
- "email": "hemangvyas1@gmail.com"
- }
-],
-	"require" : { "php": ">=5.3.3", "phpunit/phpunit": "5.2.*"}
+		{
+	 "name": "Hemang Vyas",
+	 "email": "hemangvyas1@gmail.com"
+ 		}
+	],
+	
+	"require" : { 
+	"php": ">=5.3.3", 
+	"phpunit/phpunit": "5.2.*"
+	}
+	
+	"autoload": {
+		"classmap": ["InpsydeWPNonce.php"]
+	}
 }
