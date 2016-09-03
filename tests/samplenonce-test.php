@@ -1,6 +1,6 @@
 <?php 
-spl_autoload_register(function ($InpsydeSample) {
-    include $InpsydeSample . '.php';
+spl_autoload_register(function ($samplenonce) {
+    include $samplenonce . '.php';
 });
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
