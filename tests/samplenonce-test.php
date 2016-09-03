@@ -1,5 +1,7 @@
 <?php 
-		require_once dirname( __FILE__ ) . '/../samplenonce.php';
+spl_autoload_register(function ($InpNonces) {
+    include $InpsydeSample . '.php';
+});
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
