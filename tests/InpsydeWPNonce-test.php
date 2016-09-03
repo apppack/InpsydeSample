@@ -19,8 +19,9 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
  */
  
 public function testWpCreateNonce() {
+	
 $nonce = 'inp_nonce';
-$InpNonces = new  InpNonces();
+$InpNonces = new  InpNonces($this -> action);
 
 \WP_Mock::wpFunction( 'wp_create_nonce', array(
 				'times'  => 1,
@@ -29,7 +30,7 @@ $InpNonces = new  InpNonces();
 
 $this->assertEquals( 
 	$nonce,
-	$InpNonces ->  InpCreateNonce() 
+	$InpNonces ->  InpCreateNonce($this -> action) 
 	);
 }
 
@@ -42,7 +43,7 @@ $this->assertEquals(
 public function testWpVerifyNonce() {
 $nonce = 'inp_nonce';
 $action = 'inpsyde_new_action';
-$InpNonces = new  InpNonces();
+$InpNonces = new  InpNonces($this -> action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
 				'times'  => 1,
@@ -51,7 +52,7 @@ $InpNonces = new  InpNonces();
 
 $this->assertEquals( 
 	$nonce,
-	$InpNonces ->  InpVerifyNonce($nonce) 
+	$InpNonces ->  InpVerifyNonce($this -> action) 
 	);
 }
 
