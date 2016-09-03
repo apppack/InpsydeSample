@@ -7,4 +7,4 @@ php:
 script:  
   - composer install
   - composer require --dev 10up/wp_mock:dev-master
-  - phpunit
+  - phpunit --coverage-html /tests
