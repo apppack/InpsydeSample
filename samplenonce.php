@@ -9,6 +9,20 @@ Version: 0.0.1
 */
 
 abstract class AbsInpNonces {
+	
+    private $action;
+    function __construct( $action ) {
+        $this->action = ( $action == NUll ) ? 'nonce_action' : $action;
+    }
+    /**
+     * Get the private action var
+     *
+     * @return String $action
+     **/
+    public function getAction()
+    {
+        return $this->action;
+    }
 
 	public function InpCreateNonce() {
 	
