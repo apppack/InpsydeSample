@@ -1,7 +1,6 @@
 <?php 
-spl_autoload_register(function ($InpNonces) {
-    include $InpNonces . '.php';
-});
+require_once dirname( __FILE__ ) . '/../InpsydeWPNonce.php';
+
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
