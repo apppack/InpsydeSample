@@ -1,6 +1,6 @@
 <?php 
 
-class NonceTest extends PHPUnit_Framework_TestCase {
+class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
 		\WP_Mock::setUp();
 		require_once dirname( __FILE__ ) . '/../samplenonce.php';
@@ -9,7 +9,7 @@ class NonceTest extends PHPUnit_Framework_TestCase {
 		\WP_Mock::tearDown();
 	}
 public function testWpCreateNonce() {
-$action = 'inpsyde_action';
+$action = 'my_new_action';
 $nonce = 'inp_nonce';
 
 $InpNonces = new  InpNonces($action);
