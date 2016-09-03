@@ -12,7 +12,7 @@ abstract class AbsInpNonces {
 	
     private $action;
     function __construct( $action ) {
-        $this->action = ( $action == NUll ) ? 'nonce_action' : $action;
+        $this->action = ( $action == NUll ) ? 'inpsyde_action' : $action;
     }
     /**
      * Get the private action var
