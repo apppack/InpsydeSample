@@ -1,6 +1,5 @@
 <?php 
 
-require_once dirname( __FILE__ ) . '/../samplenonce.php';
 
 
 class NonceTest extends PHPUnit_Framework_TestCase {
@@ -12,7 +11,7 @@ class NonceTest extends PHPUnit_Framework_TestCase {
 		\WP_Mock::tearDown();
 	}
 public function testWpCreateNonce() {
-$nonce = '34653456f';
+$nonce = 'inpsyde-nonce';
 
 $InpCreateNonce = new  InpCreateNonce($nonce);
 
