@@ -53,7 +53,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpVerifyNonce($nonce) {
 	
-		return wp_verify_nonce($nonce,$this - > action);
+		return wp_verify_nonce($nonce,$this -> action);
 		
 	}
 	
