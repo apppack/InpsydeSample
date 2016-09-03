@@ -1,7 +1,5 @@
 <?php 
 
-
-
 class NonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
 		\WP_Mock::setUp();
@@ -11,9 +9,8 @@ class NonceTest extends PHPUnit_Framework_TestCase {
 		\WP_Mock::tearDown();
 	}
 public function testWpCreateNonce() {
-$nonce = 'inpsyde-nonce';
 
-$InpCreateNonce = new  InpCreateNonce($nonce);
+$InpCreateNonce = new  InpCreateNonce();
 
 \WP_Mock::wpFunction( 'wp_create_nonce', array(
 				'times'  => 1,
