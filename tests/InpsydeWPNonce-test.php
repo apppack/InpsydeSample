@@ -31,7 +31,7 @@ $InpNonces = new  InpNonces($action);
 
 $this->assertEquals( 
 	$nonce,
-	$InpNonces ->  InpCreateNonce($action) 
+	$InpNonces ->  InpCreateNonce() 
 	);
 }
 
