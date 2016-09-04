@@ -42,7 +42,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
 	 */
 	 
-	public function InpCreateNonce() {
+	public function InpCreate() {
 	
 	$Inpcreate = new InpCreate;
 	
