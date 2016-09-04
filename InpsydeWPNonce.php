@@ -26,9 +26,7 @@ abstract class AbsInpNonces {
         return $this->action;
     }
     
-	public function InpsydeCreate () {
-		return wp_create_nonce ($this -> action);
-	}
+	abstract function InpCreateNonce ();
 	
 }
 
@@ -43,8 +41,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpCreateNonce() {
 	
-	$InpsydeCreate = new InpsydeCreate;
-	
+		return wp_create_nonce ($this -> action);
 	
 	}
 	
