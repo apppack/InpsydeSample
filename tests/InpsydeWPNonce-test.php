@@ -53,7 +53,7 @@ $InpNonces = new  InpNonces($action);
 
 $this->assertEquals( 
 	$nonce,
-	$InpNonces ->  InpVerifyNonce($action) 
+	$InpNonces ->  InpVerifyNonce($nonce, $action) 
 	);
 }
 
