@@ -35,7 +35,7 @@ class InpNonces extends AbsInpNonces {
 	 * [wp_nonce_ays description]
 	 * @param  String $action The nonce action.
 	 */
-	public function InpNonceAys () {
+	public function InpNonceAys ($action) {
 		
 		return wp_nonce_ays( $this -> action );
 	
@@ -48,7 +48,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
 	 */
 	 
-	public function InpCreateNonce() {
+	public function InpCreateNonce($action) {
 	
 		return wp_create_nonce ($this -> action);
 	
@@ -62,7 +62,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_verify_nonce/
 	 */
 	 
-	public function InpVerifyNonce() {
+	public function InpVerifyNonce($nonce, $action) {
 		$nonce = 'inpsyde_nonce';
 		return wp_verify_nonce($nonce, $this -> action);
 		
