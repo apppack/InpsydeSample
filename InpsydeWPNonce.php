@@ -21,11 +21,11 @@ abstract class AbsInpNonces {
         return $this->action;
     }
     
-    	abstract function InpNonceAys ($action);
+    	abstract protected function InpNonceAys ($action);
     	
-	abstract function InpCreateNonce ($action);
+	abstract protected function InpCreateNonce ($action);
 	
-	abstract function InpVerifyNonce ($nonce, $action);
+	abstract protected function InpVerifyNonce ($nonce, $action);
 	
 }
 
