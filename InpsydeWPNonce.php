@@ -44,7 +44,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpCreateNonce() {
 	
-	Inpcreate = new InpCreate;
+	$Inpcreate = new InpCreate;
 	
 	}
 	
