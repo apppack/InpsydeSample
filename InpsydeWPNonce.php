@@ -11,17 +11,14 @@ Version: 0.0.1
 abstract class AbsInpNonces {
 	
     protected $action;
-    protected $nonce;
+
     
-    
-    function __construct( $action, $nonce ) {
+    function __construct( $action ) {
         $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
-        $this->nonce = ( $nonce == NUll ) ? 'Inpsyde_nonce' : $nonce;
     }
 
-    public function getParameters() {
+    public function getAction() {
         return $this->action;
-        return $this->nonce;
     }
     
     	abstract function InpNonceAys ();
@@ -66,8 +63,8 @@ class InpNonces extends AbsInpNonces {
 	 */
 	 
 	public function InpVerifyNonce() {
-	
-		return wp_verify_nonce($this -> nonce,$this -> action);
+		$nonce = 'inpsyde_nonce';
+		return wp_verify_nonce($nonce,$this -> action);
 		
 	}
 	
