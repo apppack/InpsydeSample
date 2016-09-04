@@ -28,6 +28,8 @@ abstract class AbsInpNonces {
     
 	abstract function InpCreateNonce ();
 	
+	abstract function InpVerifyNonce ();
+	
 }
 
 class InpNonces extends AbsInpNonces {
