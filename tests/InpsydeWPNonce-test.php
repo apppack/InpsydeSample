@@ -37,7 +37,7 @@ $this->assertEquals(
 
 
 /*
- * TESTS for wp_create_nonce()
+ * TESTS for wp_verify_nonce()
  *
  */
  
