@@ -25,6 +25,19 @@ abstract class AbsInpNonces {
     {
         return $this->action;
     }
+    
+    function __construct( $nonce ) {
+        if (empty($nonce)) {
+    $nonce = 'inpsyde_nonce';
+} else {
+    $nonce = '';
+}
+    }
+    
+    public function getAction()
+    {
+        return $this->action;
+    }
    
 }
 
