@@ -14,21 +14,17 @@ abstract class AbsInpNonces {
     protected $nonce;
     
     
-    function __construct( $action ) {
+    function __construct( $action, $nonce ) {
         $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
-    }
-    
-    
-    function __construct( $nonce ) {
         $this->nonce = ( $nonce == NUll ) ? 'Inpsyde_nonce' : $nonce;
     }
-    
-    public function getAction() {
+
+    public function getParameters() {
         return $this->action;
         return $this->nonce;
     }
     
-    	abstract function InpNonceAys
+    	abstract function InpNonceAys ();
     	
 	abstract function InpCreateNonce ();
 	
