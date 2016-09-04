@@ -10,22 +10,26 @@ Version: 0.0.1
 
 abstract class AbsInpNonces {
 	
-    public $action;
-    public $nonce;
+    protected $action;
+    protected $nonce;
+    
     
     function __construct( $action ) {
-        if (empty($action)) {
-    $action = 'inpsyde_action';
-} else {
-    $action = '-1';
-}
+        $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
     }
     
-    public function getAction()
-    {
+    
+    function __construct( $nonce ) {
+        $this->nonce = ( $nonce == NUll ) ? 'Inpsyde_nonce' : $nonce;
+    }
+    
+    public function getAction() {
         return $this->action;
+        return $this->nonce;
     }
     
+    	abstract function InpNonceAys
+    	
 	abstract function InpCreateNonce ();
 	
 	abstract function InpVerifyNonce ();
@@ -33,6 +37,16 @@ abstract class AbsInpNonces {
 }
 
 class InpNonces extends AbsInpNonces {
+	
+	/**
+	 * [wp_nonce_ays description]
+	 * @param  String $action The nonce action.
+	 */
+	public function InpNonceAys () {
+		
+		return wp_nonce_ays( $this -> action );
+	
+	}
 	
 	/**
 	 * Generates and returns a nonce. The nonce is generated based on the current time, the $action argument, and the current user ID.
@@ -57,7 +71,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	public function InpVerifyNonce() {
 	
-		return wp_verify_nonce($nonce,$this -> action);
+		return wp_verify_nonce($this -> nonce,$this -> action);
 		
 	}
 	
