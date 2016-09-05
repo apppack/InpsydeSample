@@ -94,7 +94,7 @@ $this->assertEquals(
  */
  
 public function testWpNonceUrl() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $actionurl = 'http://www.inpsyde.com';
 $name = '_inpnonce';
 $InpWPUrl = array ($actionurl, $action, $name);
@@ -118,7 +118,7 @@ $this->assertEquals(
  */
  
 public function testWPCheckAdmin() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $query_arg = '_inpnonce';
 $InpNonces = new  InpNonces($action);
 
@@ -139,7 +139,7 @@ $this->assertTrue(
  */
  
 public function testWPCheckAjax() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $query_arg = '_inpnonce';
 $die = true;
 $InpNonces = new  InpNonces($action);
@@ -166,7 +166,6 @@ $referer_field = '<input type="hidden" name="_wp_http_referer" value="" />';
 $InpNonces = new  InpNonces($echo);
 \WP_Mock::wpFunction( 'wp_referer_field', array(
 				'times'  => 1,
-				'args'	 => array ($echo = true),
 				'return' => true
 			) );
 
