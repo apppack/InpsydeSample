@@ -11,11 +11,7 @@ Version: 0.0.1
 abstract class AbsInpNonces {
 	
     public $action;
-    public $nonce;	
-    public $name;
-    public $referer;
-    public $echo;
-    
+   
     function __construct( $action ) {
         $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
     }
@@ -38,6 +34,8 @@ abstract class AbsInpNonces {
 	abstract protected function InpNonceUrl ($actionurl, $name);
 	
 	abstract protected function InpCheckAdmin ($query_arg);
+	
+	abstract protected function InpAjaxReferer ($query_arg, $die);
 	
 }
 
@@ -121,7 +119,22 @@ class InpNonces extends AbsInpNonces {
 	 
 	 public function InpCheckAdmin( $action, $query_arg = '_inpnonce' ) {
 		
-		return wp_nonce_url($this -> action, $query_arg);
+		return check_admin_referer($this -> action, $query_arg);
+		
+	 }
+	 
+	 /**
+	 * Verifies the AJAX request to prevent processing requests external of the blog.
+	 * @param  String  $action    Action nonce. Default: -1.
+	 * @param  String  $query_arg Where to look for nonce in $_REQUEST. Default: false.
+	 * @param  Boolean $die       whether to die if the nonce is invalid. Default: true.
+	 * @return Boolean            If parameter $die is set to false this function will return a boolean of true if check passes or false if check fails.
+	 * see https://codex.wordpress.org/Function_Reference/check_admin_referer
+	 */
+	 
+	 public function InpAjaxReferer( $action, $query_arg = '_inpnonce',$die ) {
+		
+		return check_ajax_referer($this -> action, $query_arg);
 		
 	 }
 }
