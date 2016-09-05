@@ -7,12 +7,6 @@
 
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
-	
-private $action;
-private $nonce;
-
-
-if !isset ($nonce) { $nonce = 'inpsyde_test_nonce'};
 
 	public function setUp() {
 		\WP_Mock::setUp();
