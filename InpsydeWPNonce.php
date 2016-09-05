@@ -11,10 +11,10 @@ Version: 0.0.1
 abstract class AbsInpNonces {
 	
     public $action;
-    protected $nonce;	
-    protected $name;
-    protected $referer;
-    protected $echo;
+    public $nonce;	
+    public $name;
+    public $referer;
+    public $echo;
     
     function __construct( $action ) {
         $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
@@ -72,7 +72,6 @@ class InpNonces extends AbsInpNonces {
 	 
 	 public function InpVerifyNonce($nonce) {
 	
-		$nonce = 'inpsyde_nonce';
 		return wp_verify_nonce($nonce, $this -> action);
 	
 	}
