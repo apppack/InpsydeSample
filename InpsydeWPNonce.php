@@ -87,11 +87,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_nonce_field/
 	 */
 	
-	public function InpNonceField( $action, $name = '_inpnonce', $referer = true, $echo = true) {
-		
-		return wp_nonce_field($this -> action, $name, $referer, $echo);
-
-	}
+	
 	
 }
 
