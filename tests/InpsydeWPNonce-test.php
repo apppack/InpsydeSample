@@ -43,7 +43,7 @@ $this->assertEquals(
  
 public function testWpVerifyNonce() {
 $action = 'inpsyde_test_action';
-$nonce = 'inpsyde_test_nonce'
+$nonce = 'inpsyde_test_nonce';
 $InpNonces = new  InpNonces($nonce, $action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
@@ -58,7 +58,7 @@ $this->assertEquals(
 
 $this->assertnotEquals( 
 	$nonce,
-	$InpNonces -> ( InpVerifyNonce( $nonce,'inpsyde_test_failed')) 
+	$InpNonces -> InpVerifyNonce( $nonce,'inpsyde_test_failed') 
 	);
 }
 
