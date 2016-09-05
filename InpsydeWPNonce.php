@@ -132,7 +132,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://codex.wordpress.org/Function_Reference/check_admin_referer
 	 */
 	 
-	 public function InpAjaxReferer( $action, $query_arg = '_inpnonce',$die ) {
+	 public function InpAjaxReferer( $action, $query_arg = '_inpnonce', $die ) {
 		
 		return check_ajax_referer($this -> action, $query_arg, $die);
 		
