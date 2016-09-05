@@ -129,28 +129,28 @@ $InpNonces = new  InpNonces($action);
 			) );
 
 $this->assertTrue( 
-	$InpNonces ->  InpNonceUrl($action, $query_arg) 
+	$InpNonces ->  InpCheckAdmin($action, $query_arg) 
 	);
 }
 
 /*
- * TESTS for check_ajax_url()
+ * TESTS for check_ajax_referer()
  *
  */
  
-public function testWPCheckAdmin() {
+public function testWPCheckAjax() {
 $action = 'inpsyde_nonce_action';
 $query_arg = false;
 $die = 'true';
 $InpNonces = new  InpNonces($action);
 
-\WP_Mock::wpFunction( 'check_admin_referer', array(
+\WP_Mock::wpFunction( 'check_ajax_referer', array(
 				'times'  => 1,
 				'arg'	 => array($action, $query_arg, $die),
 			) );
 
 $this->assertTrue( 
-	$InpNonces ->  InpNonceUrl($action, $query_arg, $die) 
+	$InpNonces ->  InpAjaxReferer($action, $query_arg, $die) 
 	);
 }
 
