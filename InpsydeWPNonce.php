@@ -12,6 +12,9 @@ abstract class AbsInpNonces {
 	
     protected $action;
     protected $nonce;	
+    protected $name;
+    protected $referer;
+    protected $echo;
     
     function __construct( $action ) {
         $this->action = ( $action == NUll ) ? 'Inpsyde_nonce_action' : $action;
@@ -29,6 +32,8 @@ abstract class AbsInpNonces {
 	abstract protected function InpCreateNonce ($action);
 	
 	abstract protected function InpVerifyNonce ($nonce);
+	
+	abstract protected function InpNonceField ($action, $name, $referer, $echo);
 	
 }
 
@@ -58,18 +63,20 @@ class InpNonces extends AbsInpNonces {
 	}
 	
 	/**
-	 * Verify that a nonce is correct and unexpired with the respect to a specified action.
-	 * @param  String $nonce   Nonce to verify.
-	 * @param  Integer $action Action name. Default: -1.
-	 * @return Boolean/Integer False if the nonce is invalid, 1 – if the nonce has been generated in the past 12 hours or less., 2 – if the nonce was generated between 12 and 24 hours ago.
-	 * see https://developer.wordpress.org/reference/functions/wp_verify_nonce/
+	 * Retrieves or displays the nonce hidden form field.
+	 * @param  String  $action  Action name. Optional but recommended. Default value: -1.
+	 * @param  String  $name    Nonce name. Default: '_wpnonce'.
+	 * @param  Boolean $referer Whether also the referer hidden form field should be created with the wp_referer_field() function. Default: true.
+	 * @param  Boolean $echo    Whether to display or return the nonce hidden form field, and also the referer hidden form field if the $referer argument is set to true. Default: true.
+	 * @return String           The nonce hidden form field, optionally followed by the referer hidden form field if the $referer argument is set to true.
+	 * see https://developer.wordpress.org/reference/functions/wp_nonce_field/
 	 */
-	 
-	public function InpVerifyNonce($nonce) {
-		$nonce = 'inpsyde_nonce';
-		return wp_verify_nonce($nonce, $this -> action);
+	
+	public function InpNonceField( $action, $name, $referer, $echo) {
 		
-	}
+		return wp_nonce_field ($this -> action, $name = '_inpnonce', $referer = true, $echo = true );
+		
+	};
 	
 }
 
