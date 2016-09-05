@@ -10,7 +10,7 @@ Version: 0.0.1
 
 abstract class AbsInpNonces {
 	
-    public $action;
+    protected $action;
     protected $nonce;	
     protected $name;
     protected $referer;
