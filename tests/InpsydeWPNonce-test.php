@@ -43,7 +43,7 @@ $this->assertEquals(
  
 public function testWpVerifyNonce() {
 $action = 'inpsyde_test_action';
-if (!isset ($nonce) $nonce = 'inpsyde_test_nonce');
+$nonce = 'inp_test_nonce';
 $InpNonces = new  InpNonces($nonce, $action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
@@ -56,11 +56,31 @@ $this->assertEquals(
 	$InpNonces ->  InpVerifyNonce($nonce) 
 	);
 
-$this->assertNotEquals( 
-	$nonce,
-	$InpNonces -> InpVerifyNonce($nonce = 'inpsyde_nonce_failed')
-	);
 }
 
+
+/*
+ * TESTS for wp_nonce_field()
+ *
+ */
+ 
+public function testWpNonceField() {
+$action = 'inpsyde_test_action';
+$name = '_inpnonce';
+$referer = true;
+$echo = true;
+$InpNonces = new  InpNonces($action, $name, $referer, $echo);
+$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . $InpNonces ->  InpCreateNonce( $action ) . '" />';
+\WP_Mock::wpFunction( 'wp_verify_nonce', array(
+				'times'  => 1,
+				'return' => $nonce_field
+			) );
+
+$this->assertEquals( 
+	$nonce,
+	$InpNonces ->  InpNonceField($action, $name, $referer, $echo) 
+	);
+
+}
 
 }
