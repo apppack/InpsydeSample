@@ -37,6 +37,8 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpNonceUrl ($actionurl, $name);
 	
+	abstract protected function InpCheckAdmin ($actionurl, $name);
+	
 }
 
 class InpNonces extends AbsInpNonces {
@@ -105,7 +107,7 @@ class InpNonces extends AbsInpNonces {
 	
 	public function InpNonceUrl( $actionurl, $action, $name = '_inpnonce') {
 		
-		return wp_nonce_url($actionurl = 'http://www.inpsyde.com', $this -> action, $name);
+		return wp_nonce_url($actionurl, $this -> action, $name);
 
 	}
 	
@@ -117,7 +119,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://codex.wordpress.org/Function_Reference/check_admin_referer
 	 */
 	 
-	 public function InpNonceUrl( $action, $name = '_inpnonce' ) {
+	 public function InpCheckAdmin( $action, $name = '_inpnonce' ) {
 		
 		return wp_nonce_url($this -> action, $name);
 		
