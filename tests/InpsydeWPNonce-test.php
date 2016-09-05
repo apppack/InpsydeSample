@@ -14,7 +14,27 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
 		\WP_Mock::tearDown();
 	}
 
+/*
+ * TESTS for wp_nonce_ays()
+ *
+ */
+ 
+public function testWpNonceAys() {
+$action = 'Inpsyde_nonce_action';
+$nonce_explain = 'Are you sure you want to do this?';
+$InpNonces = new  InpNonces($action);
 
+\WP_Mock::wpFunction( 'wp_nonce_ays', array(
+				'times'  => 1,
+				'args'	 => array ($InpNonces -> getAction()),
+				'return' => $nonce_explain
+			) );
+
+$this->assertEquals( 
+	$nonce,
+	$InpNonces ->  InpCreateNonce($action) 
+	);
+}
 	
 /*
  * TESTS for wp_create_nonce()
@@ -168,6 +188,7 @@ $referer_field = '<input type="hidden" name="_wp_http_referer" value="" />';
 $InpNonces = new  InpNonces($echo);
 \WP_Mock::wpFunction( 'wp_referer_field', array(
 				'times'  => 1,
+				'arg'	 => array($echo = true),
 				'return' => true
 			) );
 
