@@ -33,7 +33,7 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpVerifyNonce ($nonce);
 	
-	abstract protected function InpNonceField ($name, $referer, $echo);
+	abstract protected function InpNonceField ($action, $name, $referer, $echo);
 	
 }
 
@@ -87,7 +87,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_nonce_field/
 	 */
 	
-	public function InpNonceField( $name, $referer = true, $echo = true) {
+	public function InpNonceField( $action, $name, $referer = true, $echo = true) {
 		
 		return wp_nonce_field($this -> action, $name = '_inpnonce', true, true);
 		
