@@ -147,6 +147,7 @@ $InpNonces = new  InpNonces($action);
 \WP_Mock::wpFunction( 'check_ajax_referer', array(
 				'times'  => 1,
 				'arg'	 => array($action, $query_arg, $die),
+				'return' => true
 			) );
 
 $this->assertTrue( 
