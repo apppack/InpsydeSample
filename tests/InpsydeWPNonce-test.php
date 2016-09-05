@@ -125,7 +125,7 @@ $InpNonces = new  InpNonces($action);
 
 \WP_Mock::wpFunction( 'check_admin_referer', array(
 				'times'  => 1,
-				'arg'	 => array ($action, $query_arg)
+				'arg'	 => array ($action, $query_arg),
 				'return' => true
 			) );
 
