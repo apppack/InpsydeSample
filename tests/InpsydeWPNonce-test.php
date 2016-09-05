@@ -173,7 +173,7 @@ $InpNonces = new  InpNonces($action);
 
 $this->asserEquals( 
 	$referer_field,
-	$InpNonces ->  InpAjaxReferer($action, $query_arg, $die) 
+	$InpNonces ->  InpRefererField($action, $query_arg, $die) 
 	);
 }
 
