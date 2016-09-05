@@ -134,7 +134,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	 public function InpAjaxReferer( $query_arg ) {
 		
-		return check_ajax_referer($this -> action, $query_arg, $die);
+		return check_ajax_referer($this -> action, $query_arg, $die = true);
 		
 	 }
 }
