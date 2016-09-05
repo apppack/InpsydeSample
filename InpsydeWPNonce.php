@@ -21,11 +21,14 @@ abstract class AbsInpNonces {
         return $this->action;
     }
     
+    
+        // the inheritance class must define these methods
+
     	abstract protected function InpNonceAys ($action);
     	
 	abstract protected function InpCreateNonce ($action);
 	
-	abstract protected function InpVerifyNonce ($nonce, $action);
+	abstract protected function InpVerifyNonce ($nonce);
 	
 }
 
