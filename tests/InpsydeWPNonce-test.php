@@ -5,7 +5,6 @@
  *
  */
 
-
 class InpNonceTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp() {
@@ -164,7 +163,7 @@ $this->assertTrue(
 public function testWPRefererField() {
 $echo = true;
 $referer_field = '<input type="hidden" name="_wp_http_referer" value="" />';
-$InpNonces = new  InpNonces($action);
+$InpNonces = new  InpNonces($echo);
 \WP_Mock::wpFunction( 'wp_referer_field', array(
 				'times'  => 1,
 				'args'	 => array ($echo = true),
