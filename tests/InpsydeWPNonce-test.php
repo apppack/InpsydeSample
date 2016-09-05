@@ -49,7 +49,6 @@ $InpNonces = new  InpNonces($action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
 				'times'  => 1,
-				'args' => $InpNonces -> getAction(),
 				'return' => $nonce
 			) );
 
