@@ -113,5 +113,24 @@ $this->assertEquals(
 	);
 }
 
+/*
+ * TESTS for wp_nonce_url()
+ *
+ */
+ 
+public function testWPCheckAdmin() {
+$action = 'inpsyde_nonce_action';
+$query_arg = '_inpnonce';
+$InpNonces = new  InpNonces($action);
+
+\WP_Mock::wpFunction( 'check_admin_referer', array(
+				'times'  => 1,
+				'return' => $query_arg
+			) );
+
+$this->assertTrue( 
+	$InpNonces ->  InpNonceUrl($action, $query_arg) 
+	);
+}
 
 }
