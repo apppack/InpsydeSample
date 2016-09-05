@@ -170,7 +170,7 @@ $InpNonces = new  InpNonces($echo);
 				'return' => true
 			) );
 
-$this->asserEquals( 
+$this->assertEquals( 
 	$referer_field,
 	$InpNonces ->  InpRefererField($echo) 
 	);
