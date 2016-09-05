@@ -59,7 +59,7 @@ $this->assertEquals(
 	
 $this->assertNotEquals( 
 	$nonce,
-	$InpNonces ->  InpVerifyNonce( $nonce = 'inp_test_nonce_failed' ) 
+	$InpNonces ->  InpVerifyNonce( inp_test_nonce_failed ) 
 	);
 }
 
