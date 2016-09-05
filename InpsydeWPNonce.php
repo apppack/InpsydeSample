@@ -55,7 +55,12 @@ class InpNonces extends AbsInpNonces {
 	 * @return String          The one use form token.
 	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
 	 */
-
+	
+	public function InpCreateNonce ($action) {
+		
+		return wp_create_nonce( $this -> action );
+	
+	}
 	
 	/**
 	 * Verify that a nonce is correct and unexpired with the respect to a specified action.
