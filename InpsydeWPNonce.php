@@ -37,7 +37,7 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpAjaxReferer ($query_arg);
 	
-	abstract protected function InpAjaxReferer ( $echo );
+	abstract protected function InpRefererField ( $echo );
 	
 }
 
@@ -147,7 +147,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://codex.wordpress.org/Function_Reference/wp_referer_field
 	 */
 	 
-	 public function InpAjaxReferer( $echo ) {
+	 public function InpRefererField( $echo ) {
 		
 		return check_ajax_referer($echo = true);
 		
