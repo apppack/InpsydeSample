@@ -42,7 +42,6 @@ $this->assertEquals(
  */
  
 public function testWpVerifyNonce() {
-$nonce = 'inpsyde_test_nonce';
 $action = 'inpsyde_test_action';
 $InpNonces = new  InpNonces($nonce = 'inpsyde_test_failed', $action);
 
