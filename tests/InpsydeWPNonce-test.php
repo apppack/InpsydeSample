@@ -31,8 +31,8 @@ $InpNonces = new  InpNonces($action);
 			) );
 
 $this->assertEquals( 
-	$nonce,
-	$InpNonces ->  InpCreateNonce($action) 
+	$nonce_explain,
+	$InpNonces ->  InpNonceAys($action) 
 	);
 }
 	
