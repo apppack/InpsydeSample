@@ -76,7 +76,7 @@ class InpNonces extends AbsInpNonces {
 		
 		return wp_nonce_field ($this -> action, $name = '_inpnonce', $referer = true, $echo = true );
 		
-	};
+	}
 	
 }
 
