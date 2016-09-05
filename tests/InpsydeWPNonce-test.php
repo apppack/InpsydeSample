@@ -97,6 +97,7 @@ $this->assertEquals(
 public function testWpNonceUrl() {
 $action = 'inpsyde_nonce_action';
 $actionurl = 'http://www.inpsyde.com';
+$name = '_inpnonce';
 $InpWPUrl = array ($actionurl, $action, $name);
 $InpNonces = new  InpNonces($action);
 
