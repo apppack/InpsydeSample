@@ -4,6 +4,11 @@
  * TESTS FOR InpsydeWPNonce
  *
  */
+private $action;
+private $nonce;
+
+$action = 'inpsyde_test_action';
+if !isset ($nonce) { $nonce = 'inpsyde_test_nonce'};
 
 class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
@@ -20,8 +25,6 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
  
 public function testWpCreateNonce() {
 	
-$nonce = 'inp_nonce';
-$action = 'inpsyde_test_action';
 $InpNonces = new  InpNonces($action);
 
 \WP_Mock::wpFunction( 'wp_create_nonce', array(
@@ -42,8 +45,6 @@ $this->assertEquals(
  */
  
 public function testWpVerifyNonce() {
-$action = 'inpsyde_test_action';
-$nonce = 'inpsyde_test_nonce';
 $InpNonces = new  InpNonces('inpsyde_nonce_failed', $action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
