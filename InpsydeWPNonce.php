@@ -35,7 +35,7 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpCheckAdmin ($query_arg);
 	
-	abstract protected function InpAjaxReferer ($query_arg, $die);
+	abstract protected function InpAjaxReferer ($query_arg);
 	
 }
 
