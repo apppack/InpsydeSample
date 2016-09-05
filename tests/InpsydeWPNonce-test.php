@@ -109,7 +109,7 @@ $InpNonces = new  InpNonces($action);
 
 $this->assertEquals( 
 	$InpWPUrl,
-	$InpNonces ->  InpNonceUrl($action) 
+	$InpNonces ->  InpNonceUrl($actionurl, $action, $name) 
 	);
 }
 
