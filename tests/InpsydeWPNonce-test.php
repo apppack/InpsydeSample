@@ -69,23 +69,6 @@ $this->assertNotEquals(
  *
  */
  
-public function testWpNonceField() {
-$action = 'inpsyde_test_action';
-$name = '_inpnonce';
-$referer = true;
-$echo = true;
-$InpNonces = new  InpNonces($name);
-$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . $action . '" />';
-\WP_Mock::wpFunction( 'wp_verify_nonce', array(
-				'times'  => 1,
-				'return' => $nonce_field
-			) );
 
-$this->assertEquals( 
-	$nonce_field,
-	$InpNonces ->  InpNonceField($action, $name, $referer, $echo) 
-	);
-
-}
 
 }
