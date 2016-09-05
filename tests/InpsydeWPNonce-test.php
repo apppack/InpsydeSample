@@ -13,6 +13,8 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
 	public function tearDown() {
 		\WP_Mock::tearDown();
 	}
+
+
 	
 /*
  * TESTS for wp_create_nonce()
@@ -74,10 +76,10 @@ $name = '_inpnonce';
 $referer = true;
 $echo = true;
 $InpNonces = new  InpNonces($name);
-$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="'.$action.'" />';
+$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="'.$InpNonces -> getAction().'" />';
 \WP_Mock::wpFunction( 'wp_nonce_field', array(
 				'times'  => 1,
-				'args' => array($action, $name, true, false),
+				'args' => array($InpNonces -> getAction(), $name, true, false),
 				'return' => $nonce_field
 			) );
 
