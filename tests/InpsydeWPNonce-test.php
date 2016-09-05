@@ -185,11 +185,11 @@ $this->assertTrue(
 public function testWPRefererField() {
 $echo = true;
 $referer_field = '<input type="hidden" name="_wp_http_referer" value="" />';
-$InpNonces = new  InpNonces($echo);
+$InpNonces = new  InpNonces();
 \WP_Mock::wpFunction( 'wp_referer_field', array(
 				'times'  => 1,
 				'arg'	 => array($echo = true),
-				'return' => true
+				'return' => $referer_field
 			) );
 
 $this->assertEquals( 
