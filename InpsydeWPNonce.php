@@ -37,6 +37,8 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpAjaxReferer ($query_arg);
 	
+	abstract protected function InpAjaxReferer ( $echo );
+	
 }
 
 class InpNonces extends AbsInpNonces {
@@ -135,6 +137,19 @@ class InpNonces extends AbsInpNonces {
 	 public function InpAjaxReferer( $query_arg ) {
 		
 		return check_ajax_referer($this -> action, $query_arg, $die = true);
+		
+	 }
+	 
+	 /**
+	 * Retrieves or displays the referer hidden form field.
+	 * @param  boolean $echo Whether to display or return the referer hidden form field. Default: true.
+	 * @return String        Referer field.
+	 * see https://codex.wordpress.org/Function_Reference/wp_referer_field
+	 */
+	 
+	 public function InpAjaxReferer( $echo ) {
+		
+		return check_ajax_referer($echo = true);
 		
 	 }
 }
