@@ -83,7 +83,7 @@ $nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" val
 			) );
 
 $this->assertEquals( 
-	$nonce,
+	$nonce_field,
 	$InpNonces ->  InpNonceField($action, $name, $referer, $echo) 
 	);
 
