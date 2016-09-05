@@ -140,7 +140,7 @@ $this->assertTrue(
  
 public function testWPCheckAjax() {
 $action = 'inpsyde_nonce_action';
-$query_arg = false;
+$query_arg = '_inpnonce';
 $die = 'true';
 $InpNonces = new  InpNonces($action);
 
