@@ -67,7 +67,7 @@ class InpNonces extends AbsInpNonces {
 	 * @param  String $nonce   Nonce to verify.
 	 * @param  String $action  Action name. Default: -1.
 	 * @return Boolean/Integer False if the nonce is invalid, 1 – if the nonce has been generated in the past 12 hours or less., 2 – if the nonce was generated between 12 and 24 hours ago.
-	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
+	 * see https://developer.wordpress.org/reference/functions/wp_verify_nonce/
 	 */
 	 
 	 public function InpVerifyNonce($nonce='inpsyde_nonce') {
