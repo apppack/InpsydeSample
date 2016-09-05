@@ -48,7 +48,7 @@ $nonce = 'inpsyde_test_nonce';
 $InpNonces = new  InpNonces($nonce);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
-				'times'  => 1,
+				'times'  => 2,
 				'return' => $nonce
 			) );
 
