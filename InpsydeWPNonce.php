@@ -37,7 +37,7 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpNonceUrl ($actionurl, $name);
 	
-	abstract protected function InpCheckAdmin ($actionurl, $name);
+	abstract protected function InpCheckAdmin ($query_arg);
 	
 }
 
@@ -119,9 +119,9 @@ class InpNonces extends AbsInpNonces {
 	 * see https://codex.wordpress.org/Function_Reference/check_admin_referer
 	 */
 	 
-	 public function InpCheckAdmin( $action, $name = '_inpnonce' ) {
+	 public function InpCheckAdmin( $action, $query_arg = '_inpnonce' ) {
 		
-		return wp_nonce_url($this -> action, $name);
+		return wp_nonce_url($this -> action, $query_arg);
 		
 	 }
 }
