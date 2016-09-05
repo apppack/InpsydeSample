@@ -142,7 +142,7 @@ $this->assertTrue(
 public function testWPCheckAjax() {
 $action = 'inpsyde_nonce_action';
 $query_arg = '_inpnonce';
-$die = 'true';
+$die = true;
 $InpNonces = new  InpNonces($action);
 
 \WP_Mock::wpFunction( 'check_ajax_referer', array(
@@ -152,6 +152,27 @@ $InpNonces = new  InpNonces($action);
 			) );
 
 $this->assertTrue( 
+	$InpNonces ->  InpAjaxReferer($action, $query_arg, $die) 
+	);
+}
+
+/*
+ * TESTS for wp_referer_field()
+ *
+ */
+ 
+public function testWPRefererField() {
+$echo = true;
+$referer_field = '<input type="hidden" name="_wp_http_referer" value="" />';
+$InpNonces = new  InpNonces($action);
+\WP_Mock::wpFunction( 'wp_referer_field', array(
+				'times'  => 1,
+				'args'	 => array ($echo = true),
+				'return' => true
+			) );
+
+$this->asserEquals( 
+	$referer_field,
 	$InpNonces ->  InpAjaxReferer($action, $query_arg, $die) 
 	);
 }
