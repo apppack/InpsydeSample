@@ -35,6 +35,8 @@ abstract class AbsInpNonces {
 	
 	abstract protected function InpNonceField ($action, $name, $referer, $echo);
 	
+	abstract protected function InpNonceUrl ($actionurl, $name);
+	
 }
 
 class InpNonces extends AbsInpNonces {
@@ -103,8 +105,22 @@ class InpNonces extends AbsInpNonces {
 	
 	public function InpNonceUrl( $actionurl, $action, $name = '_inpnonce') {
 		
-		return wp_nonce_url($actionurl, $this -> action, $name);
+		return wp_nonce_url($actionurl = 'http://www.inpsyde.com', $this -> action, $name);
 
 	}
+	
+	/**
+	 * Tests either if the current request carries a valid nonce
+	 * @param  String $action    Action name. Optional but recommended. Default value: -1.
+	 * @param  String $query_arg Nonce name. Default: '_wpnonce'.
+	 * @return Boolean            Either true or false.
+	 * see https://codex.wordpress.org/Function_Reference/check_admin_referer
+	 */
+	 
+	 public function InpNonceUrl( $action, $name = '_inpnonce' ) {
+		
+		return wp_nonce_url($this -> action, $name);
+		
+	 }
 }
 
