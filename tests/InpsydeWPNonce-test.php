@@ -75,7 +75,7 @@ $name = '_inpnonce';
 $referer = true;
 $echo = true;
 $InpNonces = new  InpNonces($name);
-$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="''" />';
+$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="inpsyde_test_action" />';
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
 				'times'  => 1,
 				'return' => $nonce_field
