@@ -102,7 +102,7 @@ $InpNonces = new  InpNonces($action);
 
 \WP_Mock::wpFunction( 'wp_nonce_url', array(
 				'times'  => 1,
-				'arg'	 => array($actionurl, $action, $name)
+				'arg'	 => array($actionurl, $action, $name),
 				'return_in_order' => array(1,2)
 			) );
 
