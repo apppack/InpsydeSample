@@ -55,6 +55,11 @@ $this->assertEquals(
 	$nonce,
 	$InpNonces ->  InpVerifyNonce($nonce, $action) 
 	);
+
+$this->assertnotEquals( 
+	$nonce,
+	$InpNonces ->  InpVerifyNonce($nonce = 'inpsyde_test_fail_nonce', $action) 
+	);
 }
 
 
