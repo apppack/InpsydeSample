@@ -11,7 +11,7 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
 private $action;
 private $nonce;
 
-$action = 'inpsyde_test_action';
+
 if !isset ($nonce) { $nonce = 'inpsyde_test_nonce'};
 
 	public function setUp() {
