@@ -149,7 +149,7 @@ class InpNonces extends AbsInpNonces {
 	 
 	 public function InpRefererField( $echo ) {
 		
-		return check_ajax_referer($echo = true);
+		return wp_referer_field($echo = true);
 		
 	 }
 }
