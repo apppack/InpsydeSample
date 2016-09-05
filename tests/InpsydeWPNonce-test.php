@@ -49,7 +49,7 @@ $InpNonces = new  InpNonces($nonce, $action);
 
 \WP_Mock::wpFunction( 'wp_verify_nonce', array(
 				'times'  => 1,
-				'return' => $nonce
+				'return' => $InpNonces -> getAction()
 			) );
 
 $this->assertEquals( 
@@ -70,12 +70,12 @@ $this->assertNotEquals(
  */
  
 public function testWpNonceField() {
-$action = 'inpsyde_test_action';
+$action = 'inpsyde_nonce_action';
 $name = '_inpnonce';
 $referer = true;
 $echo = true;
 $InpNonces = new  InpNonces($name);
-$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="inpsyde_test_action" />';
+$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="'.$InpNonces -> getAction().'" />';
 \WP_Mock::wpFunction( 'wp_nonce_field', array(
 				'times'  => 1,
 				'return' => ($action, $name, $referer, $echo)
