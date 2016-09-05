@@ -70,7 +70,7 @@ class InpNonces extends AbsInpNonces {
 	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
 	 */
 	 
-	 public function InpVerifyNonce($nonce) {
+	 public function InpVerifyNonce($nonce='inpsyde_nonce') {
 	
 		return wp_verify_nonce($nonce, $this -> action);
 	
@@ -92,7 +92,19 @@ class InpNonces extends AbsInpNonces {
 
 	}
 
+	/**
+	 * Retrieve URL with nonce added to URL query.
+	 * @param  String $actionurl URL to add nonce action.
+	 * @param  String $action    Nonce action name Default: -1.
+	 * @param  String $name      Nonce name. Default: '_wpnonce'.
+	 * @return String            URL with nonce action added.
+	 * see https://codex.wordpress.org/Function_Reference/wp_nonce_url
+	 */
 	
-	
+	public function InpNonceUrl( $actionurl, $action, $name = '_inpnonce') {
+		
+		return wp_nonce_url($actionurl, $this -> action, $name);
+
+	}
 }
 
