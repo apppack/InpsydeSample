@@ -20,7 +20,7 @@ class InpNonceTest extends PHPUnit_Framework_TestCase {
  */
  
 public function testWpCreateNonce() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $nonce = 'inpsyde_nonce';
 $InpNonces = new  InpNonces($action);
 
@@ -42,7 +42,7 @@ $this->assertEquals(
  */
  
 public function testWpVerifyNonce() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $nonce = 'inpsyde_test_nonce';
 $InpNonces = new  InpNonces($nonce);
 
@@ -69,7 +69,7 @@ $this->assertNotEquals(
  */
  
 public function testWpNonceField() {
-$action = 'inpsyde_nonce_action';
+$action = 'Inpsyde_nonce_action';
 $name = '_inpnonce';
 $referer = true;
 $echo = true;
