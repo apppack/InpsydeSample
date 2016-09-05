@@ -114,7 +114,7 @@ $this->assertEquals(
 }
 
 /*
- * TESTS for wp_nonce_url()
+ * TESTS for check_admin_referer()
  *
  */
  
@@ -130,6 +130,27 @@ $InpNonces = new  InpNonces($action);
 
 $this->assertTrue( 
 	$InpNonces ->  InpNonceUrl($action, $query_arg) 
+	);
+}
+
+/*
+ * TESTS for check_ajax_url()
+ *
+ */
+ 
+public function testWPCheckAdmin() {
+$action = 'inpsyde_nonce_action';
+$query_arg = false;
+$die = 'true';
+$InpNonces = new  InpNonces($action);
+
+\WP_Mock::wpFunction( 'check_admin_referer', array(
+				'times'  => 1,
+				'arg'	 => array($action, $query_arg, $die),
+			) );
+
+$this->assertTrue( 
+	$InpNonces ->  InpNonceUrl($action, $query_arg, $die) 
 	);
 }
 
