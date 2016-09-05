@@ -63,6 +63,20 @@ class InpNonces extends AbsInpNonces {
 	}
 	
 	/**
+	 * Verify that a nonce is correct and unexpired with the respect to a specified action.
+	 * @param  String $nonce   Nonce to verify.
+	 * @param  String $action  Action name. Default: -1.
+	 * @return Boolean/Integer False if the nonce is invalid, 1 – if the nonce has been generated in the past 12 hours or less., 2 – if the nonce was generated between 12 and 24 hours ago.
+	 * see https://developer.wordpress.org/reference/functions/wp_create_nonce/
+	 */
+	 
+	 public function InpVerifyNonce($action) {
+	
+		return wp_verify_nonce ($nonce, $this -> action);
+	
+	}
+	
+	/**
 	 * Retrieves or displays the nonce hidden form field.
 	 * @param  String  $action  Action name. Optional but recommended. Default value: -1.
 	 * @param  String  $name    Nonce name. Default: '_wpnonce'.
