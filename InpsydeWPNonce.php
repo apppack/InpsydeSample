@@ -86,7 +86,13 @@ class InpNonces extends AbsInpNonces {
 	 * @return String           The nonce hidden form field, optionally followed by the referer hidden form field if the $referer argument is set to true.
 	 * see https://developer.wordpress.org/reference/functions/wp_nonce_field/
 	 */
-	
+	 
+	public function InpNonceField( $action, $name = '_inpnonce', $referer = true, $echo = true) {
+		
+		return wp_nonce_field($this -> action, $name, $referer, $echo);
+
+	}
+
 	
 	
 }
